@@ -1,0 +1,17 @@
+first: 
+  title: "Sumo Wrestling"
+  start_date: "2024-01-01"
+  end_date: "2024-06-01"
+  season: "700"
+
+second:
+  title: "Always Sunny"
+  start_date: "2024-01-01"
+  end_date: "2024-06-01"
+  season: "1"
+
+third:
+  title: "Survivor"
+  start_date: "2024-01-01"
+  end_date: "2024-06-01"
+  season: "24"

@@ -31,6 +31,8 @@ gem "jbuilder"
 
 gem "simple_form"
 
+gem "sass"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
