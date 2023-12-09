@@ -1,0 +1,14 @@
+en:
+  simple_form:
+    placeholders:
+      event:
+        title: Title of the event
+    labels:
+      event:
+        title: Title
+
+  helpers:
+    submit:
+      event:
+        create: Create event
+        update: Update event
