@@ -5,6 +5,13 @@
     </div>
   <% end %>
 
-  <%= f.input :name, input_html: { autofocus: true } %>
+  <div style="display:flex; flex-wrap: wrap;">
+      <%= f.input :title, input_html: { autofocus: true } %>
+      <%= f.input :start_date, as: :date, html5: true  %>
+      <%= f.input :end_date, as: :date, html5: true  %>
+      <%= f.input :season, as: :integer %>
+  </div>
+
+  <%= link_to "Cancel", events_path, class: "btn btn--light" %>
   <%= f.submit class: "btn btn--secondary" %>
 <% end %>

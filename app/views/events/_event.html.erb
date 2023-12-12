@@ -1,0 +1,31 @@
+<%= turbo_frame_tag event do %>
+  <div class="event">
+    <%= link_to event.title, event_path(event), data: { turbo_frame: "_top"} %>
+    <% if event.days_until_text.present? %>
+      <div class="event__days_until">
+        <%= event.days_until_text %>
+      </div>
+    <% end %>
+    <% if event.length_text.present? %>
+      <div class="event__length">
+        <%= event.length_text %>
+      </div>
+    <% end %>
+    <% if event.season.present? %>
+      <div class="event__season">
+        Season: <%= event.season %>
+      </div>
+    <% end %>
+    <div class="event__actions">
+      <%= button_to "Delete",
+                    event_path(event),
+                    method: :delete,
+                    form: { data: { turbo_frame: "_top" } },
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
+                  edit_event_path(event),
+                  class: "btn btn--light" %>
+    </div>
+    </div>
+  </div>
+<% end %>

@@ -1,11 +1,11 @@
 en:
   simple_form:
-    placeholders:
-      event:
-        title: Title of the event
     labels:
       event:
         title: Title
+        start_date: Start Date
+        end_date: End Date
+        Season: Season #
 
   helpers:
     submit:

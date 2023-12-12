@@ -1,8 +1,15 @@
 <main class="container">
-  <%= link_to sanitize("&larr; Back to quotes"), quotes_path %>
-  <div class="header">
-    <h1>
-      <%= @quote.name %>
-    </h1>
+  <%= link_to sanitize("&larr; Back to events"), events_path %>
+
+  <render @event %>
+
+  <div class="event__actions">
+    <%= button_to "Delete",
+                  event_path(@event),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_event_path(@event),
+                class: "btn btn--light" %>
   </div>
 </main>

@@ -1,10 +1,15 @@
+<%= turbo_include_tags %>
+<%= turbo_stream_from "events" %>
 <main class="container">
   <div class="header">
     <h2>Events</h2>
     <%= link_to "New event",
                 new_event_path,
-                class: "btn btn--primary" %>
+                class: "btn btn--primary",
+                data: { turbo_frame: dom_id(Event.new) } %>
   </div>
-
-  <%= render @events %>
+  <%= turbo_frame_tag Event.new %>
+  <%= turbo_frame_tag "events" do %>
+    <%= render @events %>
+  <% end %>
 </main>
