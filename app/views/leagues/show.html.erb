@@ -1,0 +1,15 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to leagues"), leagues_path %>
+
+  <render @league %>
+
+  <div class="league__actions">
+    <%= button_to "Delete",
+                  league_path(@league),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_league_path(@league),
+                class: "btn btn--light" %>
+  </div>
+</main>

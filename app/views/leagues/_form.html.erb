@@ -1,0 +1,15 @@
+<%= simple_form_for league, html: { class: "league form" } do |f| %>
+  <% if league.errors.any? %>
+    <div class="error-message">
+      <%= league.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div style="display:flex; flex-wrap: wrap;">
+      <%= f.input :name, input_html: { autofocus: true } %>
+      <%= f.association :event %>
+  </div>
+
+  <%= link_to "Cancel", leagues_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
