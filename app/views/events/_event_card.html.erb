@@ -1,0 +1,25 @@
+<%= turbo_frame_tag event do %>
+  <div class="event_card">
+    <h4>
+      <%= event.title %>
+    </h4>
+    <% if event.image.attached? %>
+      <%= image_tag event.image, class: "event__image" %>
+    <% end %>
+    <% if event.days_until_text.present? %>
+      <div class="event__days_until">
+        <%= event.days_until_text %>
+      </div>
+    <% end %>
+    <% if event.length_text.present? %>
+      <div class="event__length">
+        <%= event.length_text %>
+      </div>
+    <% end %>
+    <% if event.season.present? %>
+      <div class="event__season">
+        Season: <%= event.season %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

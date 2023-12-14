@@ -9,7 +9,11 @@
                 data: { turbo_frame: dom_id(Event.new) } %>
   </div>
   <%= turbo_frame_tag Event.new %>
-  <%= turbo_frame_tag "events" do %>
-    <%= render @events %>
+  <%= turbo_frame_tag "events", class:"events" do %>
+    <% @events.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <%= render partial: "event_card", locals: { event: event } %>
+      <% end %>
+    <% end %> 
   <% end %>
 </main>

@@ -10,6 +10,8 @@
   </div>
   <%= turbo_frame_tag Contestant.new %>
   <%= turbo_frame_tag "contestants" do %>
-    <%= render @contestants %>
+    <% @contestants.each do |contestant| %>
+      <%= render partial: "contestant_card", locals: { contestant: contestant } %>
+    <% end %>
   <% end %>
 </main>

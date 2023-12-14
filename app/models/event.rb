@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   validates :title, presence: true
   has_many :leagues
+  has_one_attached :image
 
   scope :ordered, -> { order(id: :desc) }
 
