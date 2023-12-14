@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to contestants"), contestants_path %>
+
+  <div class="header">
+    <h2>New contestant</h2>
+  </div>
+
+  <%= turbo_frame_tag @contestant do %>
+    <%= render "form", contestant: @contestant %>
+  <% end %>
+</main>

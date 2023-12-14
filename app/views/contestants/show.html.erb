@@ -1,0 +1,15 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to contestants"), contestants_path %>
+
+  <render @contestant %>
+
+  <div class="contestant__actions">
+    <%= button_to "Delete",
+                  contestant_path(@contestant),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_contestant_path(@contestant),
+                class: "btn btn--light" %>
+  </div>
+</main>

@@ -1,0 +1,25 @@
+<%= turbo_frame_tag contestant do %>
+  <div class="contestant">
+    <%= link_to contestant.name, contestant_path(contestant), data: { turbo_frame: "_top"} %>
+    <% if contestant.birth_date.present? %>
+      <div class="contestant__age">
+        <%= contestant.age %> years old
+      </div>
+    <% end %>
+    <% if contestant.description.present? %>
+      <div class="contestant__description">
+        <%= contestant.description %>
+      </div>
+    <% end %> 
+    <div class="contestant__actions">
+      <%= button_to "Delete",
+                    contestant_path(contestant),
+                    method: :delete,
+                    form: { data: { turbo_frame: "_top" } },
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
+                  edit_contestant_path(contestant),
+                  class: "btn btn--light" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<%= simple_form_for contestant, html: { class: "contestant form" } do |f| %>
+  <% if contestant.errors.any? %>
+    <div class="error-message">
+      <%= contestant.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div style="display:flex; flex-wrap: wrap;">
+      <%= f.input :name, input_html: { autofocus: true } %>
+      <%= f.input :birth_date, as: :date, html5: true  %>
+      <%= f.input :description %>
+  </div>
+
+  <%= link_to "Cancel", contestants_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
